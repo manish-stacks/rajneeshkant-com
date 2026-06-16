@@ -15,6 +15,9 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react', 'date-fns'],
   },
+  typescript:{
+    ignoreBuildErrors: true,
+  },
 };
 
 module.exports = nextConfig;

@@ -12,9 +12,10 @@ import {
 } from "lucide-react";
 import api from "@/lib/axios";
 
+// "admin@gmail.com" "123456"
 export default function AdminLoginPage() {
-  const [email, setEmail] = useState("admin@gmail.com");
-  const [password, setPassword] = useState("123456");
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");

@@ -8,12 +8,8 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 
 const banners = [
-  {
-    image: "/images/slider/slider-1.png",
-  },
-  {
-    image: "/images/slider/slider-2.png",
-  },
+  { image: "/images/slider/slider-1.png" },
+  { image: "/images/slider/slider-2.png" },
 ];
 
 export default function HeroBanner() {
@@ -33,13 +29,15 @@ export default function HeroBanner() {
       >
         {banners.map((banner, index) => (
           <SwiperSlide key={index}>
-            <div className="relative w-full h-[200px] sm:h-[300px] md:h-[420px] lg:h-[520px] xl:h-[600px]">
+            {/* aspect-ratio approach — mobile pe 16:7, desktop pe wider */}
+            <div className="relative w-full aspect-[16/5] sm:aspect-[16/6] md:aspect-[16/5] lg:aspect-[16/4.5]">
               <Image
                 src={banner.image}
                 alt={`Banner ${index + 1}`}
                 fill
-                priority
-                className="object-cover"
+                priority={index === 0}   
+                sizes="100vw"             
+                className="object-cover object-center"
               />
             </div>
           </SwiperSlide>

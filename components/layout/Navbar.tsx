@@ -45,7 +45,7 @@ export function Navbar() {
         );
         setTreatments(list);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   return (
@@ -77,8 +77,15 @@ export function Navbar() {
       <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white backdrop-blur-md shadow-md" : "bg-white"}`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-[92px]">
-            <Link href="/" className="flex items-center">
-              <Image src="/images/logo.jpg" alt="Dr Rajneesh Kant" width={170} height={90} priority className="object-contain w-[120px] md:w-[110px] h-auto" />
+            <Link href="/" className="flex items-center h-full">
+              <Image
+                src="/images/logo.jpg"
+                alt="Dr Rajneesh Kant"
+                width={170}
+                height={90}
+                priority
+                className="object-contain w-auto max-w-[140px] md:max-w-[160px] h-full max-h-[60px]"
+              />
             </Link>
 
             {/* DESKTOP MENU */}

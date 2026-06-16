@@ -138,9 +138,9 @@ export function TreatmentsSection() {
                 </h3>
 
                 {/* Desc */}
-                <p className="text-gray-600 group-hover:text-white/90 leading-6 text-[14px] transition-all duration-500 line-clamp-3">
-                  {treatment.shortDesc}
-                </p>
+
+                <p className="text-gray-600 group-hover:text-white/90 leading-6 text-[14px] transition-all duration-500 line-clamp-3" dangerouslySetInnerHTML={{ __html: treatment.shortDesc }} />
+                  
 
                 {/* Button */}
                 <div className="mt-4 inline-flex items-center gap-2 text-[#11bfd0] group-hover:text-white font-semibold text-sm transition-all duration-500">

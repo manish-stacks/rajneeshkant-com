@@ -11,18 +11,27 @@ export const metadata: Metadata = {
 export default function AppointmentPage() {
   return (
     <>
-      <section className="pt-28 pb-16 bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="container mx-auto px-4 text-center max-w-3xl mx-auto">
-          <p className="text-brand-teal font-semibold text-sm uppercase tracking-wider mb-3">
-            Consultation
-          </p>
-          <h1 className="font-heading text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Book Your Appointment
-          </h1>
-          <p className="text-gray-600 text-lg">
-            Take the first step toward a pain-free life. Fill the form below or
-            call us directly to schedule your consultation.
-          </p>
+      <section className="relative pt-32 pb-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/service-banner.jpg"
+            alt="Consultation"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-[#0F172A]/80" />
+        </div>
+
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6">
+              Book Your <span className="text-sky-500"> Appointment</span>
+            </h1>
+
+            <p className="text-white text-lg">
+              Take the first step toward a pain-free life. Fill the form below or
+              call us directly to schedule your consultation.
+            </p>
+          </div>
         </div>
       </section>
 

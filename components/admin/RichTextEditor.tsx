@@ -141,7 +141,12 @@ export default function RichTextEditor({
           ref={quillRef}
           theme="snow"
           value={value}
-          onChange={onChange}
+          onChange={(content: string, _delta: unknown, source: string) => {
+            // Ignore Quill's automatic normalisation on load (source === "api").
+            // Only persist real edits the user makes inside Visual mode, so raw
+            // HTML pasted in the HTML tab is never silently rewritten.
+            if (source === "user") onChange(content);
+          }}
           modules={modules}
           formats={formats}
           placeholder={placeholder}
@@ -166,7 +171,75 @@ export default function RichTextEditor({
           min-height: 320px;
         }
         .rich-text-editor .ql-editor { min-height: 320px; }
-        .rich-text-editor .ql-editor img { border-radius: 0.5rem; max-width: 100%; }
+
+        /* ── Article-like typography so the editor previews close to the live
+              page (Quill loads none of the site CSS otherwise → looks plain). ── */
+        .rich-text-editor .ql-editor {
+          color: #374151;
+          font-size: 1.0625rem;
+          line-height: 1.75;
+        }
+        .rich-text-editor .ql-editor h1,
+        .rich-text-editor .ql-editor h2,
+        .rich-text-editor .ql-editor h3,
+        .rich-text-editor .ql-editor h4,
+        .rich-text-editor .ql-editor h5,
+        .rich-text-editor .ql-editor h6 {
+          color: #0f172a;
+          font-weight: 700;
+          line-height: 1.25;
+          margin: 1.6em 0 0.6em;
+        }
+        .rich-text-editor .ql-editor > :first-child { margin-top: 0; }
+        .rich-text-editor .ql-editor h1 { font-size: 2.1rem; }
+        .rich-text-editor .ql-editor h2 { font-size: 1.6rem; }
+        .rich-text-editor .ql-editor h3 { font-size: 1.3rem; }
+        .rich-text-editor .ql-editor h4 { font-size: 1.1rem; }
+        .rich-text-editor .ql-editor p { margin: 0 0 1.1em; }
+        .rich-text-editor .ql-editor strong { font-weight: 700; color: #111827; }
+        .rich-text-editor .ql-editor a { color: #2563eb; text-decoration: underline; }
+        .rich-text-editor .ql-editor ul { list-style: disc; padding-left: 1.6em; margin: 0 0 1.1em; }
+        .rich-text-editor .ql-editor ol { list-style: decimal; padding-left: 1.6em; margin: 0 0 1.1em; }
+        .rich-text-editor .ql-editor li { margin: 0.35em 0; padding-left: 0.25em; }
+        .rich-text-editor .ql-editor blockquote {
+          border-left: 4px solid #38bdf8;
+          background: #f0f9ff;
+          margin: 1.2em 0;
+          padding: 0.6em 1.1em;
+          color: #475569;
+          font-style: italic;
+          border-radius: 0 0.5rem 0.5rem 0;
+        }
+        .rich-text-editor .ql-editor pre,
+        .rich-text-editor .ql-editor .ql-code-block-container {
+          background: #0f172a;
+          color: #e2e8f0;
+          border-radius: 0.6rem;
+          padding: 1em 1.2em;
+          overflow-x: auto;
+          font-size: 0.9rem;
+        }
+        .rich-text-editor .ql-editor img {
+          border-radius: 0.75rem;
+          max-width: 100%;
+          height: auto;
+          margin: 1.2em 0;
+        }
+        .rich-text-editor .ql-editor table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 1.2em 0;
+          display: block;
+          overflow-x: auto;
+        }
+        .rich-text-editor .ql-editor th,
+        .rich-text-editor .ql-editor td {
+          border: 1px solid #e2e8f0;
+          padding: 0.5em 0.75em;
+          text-align: left;
+        }
+        .rich-text-editor .ql-editor th { background: #f8fafc; font-weight: 600; }
+        .rich-text-editor .ql-editor hr { border: 0; border-top: 1px solid #e2e8f0; margin: 1.8em 0; }
       `}</style>
     </div>
   );

@@ -104,28 +104,31 @@ export default function BlogPage() {
   return (
     <>
       {/* ================= HERO ================= */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-sky-50 via-white to-white pt-28 pb-0">
-        <div className="absolute top-0 left-0 w-72 h-72 bg-sky-100 rounded-full blur-3xl opacity-60" />
-        <div className="absolute bottom-0 right-0 w-72 h-72 bg-cyan-100 rounded-full blur-3xl opacity-60" />
+      <section className="relative pt-32 pb-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/service-banner.jpg"
+            alt="Health Resources & Expert Advice"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-[#0F172A]/80" />
+        </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center rounded-full bg-sky-50 border border-sky-100 px-4 py-1 text-sm font-semibold text-sky-600 mb-5">
-              Health Resources & Expert Advice
-            </span>
-
-            <h1 className="text-4xl md:text-6xl font-bold text-slate-900 leading-tight">
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6">
               Expert Health
               <span className="text-sky-500"> Blog</span>
             </h1>
 
-            <p className="mt-5 text-lg leading-8 text-slate-600">
+            <p className="text-white text-lg">
               Evidence-based articles on chiropractic care, physiotherapy,
               rehabilitation, pain management and healthy living.
             </p>
           </div>
         </div>
       </section>
+
 
       {/* ================= BLOGS ================= */}
       <section id="blog-list" className="relative bg-white py-14 lg:py-20 scroll-mt-28">

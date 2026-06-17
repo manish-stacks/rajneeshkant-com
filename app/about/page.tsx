@@ -34,20 +34,31 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-28 pb-16 bg-gradient-to-br from-[#7cc5cc] to-[#aae6e6]">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto">
-            <p className="text-brand-teal font-semibold text-sm uppercase tracking-wider mb-3">About the Doctor</p>
-            <h1 className="font-heading text-4xl md:text-5xl font-bold text-gray-900 mb-5">
-              Dr. Rajneesh Kant
+
+      <section className="relative pt-32 pb-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/service-banner.jpg"
+            alt="About the Doctor"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-[#0F172A]/80" />
+        </div>
+
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-5xl mx-auto text-center text-white">
+            <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6">
+              About the Doctor
             </h1>
-            <p className="text-gray-600 text-lg">
+
+             <p className="text-white text-lg">
               India&apos;s Leading Chiropractor & Physiotherapist — dedicated to
               delivering lasting relief through evidence-based, non-surgical care.
             </p>
           </div>
         </div>
       </section>
+
 
       {/* Bio */}
       <AboutSection />

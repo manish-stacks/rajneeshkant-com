@@ -88,26 +88,32 @@ export default function ContactPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-sky-50 via-white to-white pt-28 pb-16">
-        <div className="absolute top-0 left-0 h-72 w-72 rounded-full bg-sky-100 blur-3xl opacity-60" />
-        <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-cyan-100 blur-3xl opacity-60" />
+      <section className="relative pt-32 pb-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/service-banner.jpg"
+            alt="Contact Our Clinic"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-[#0F172A]/80" />
+        </div>
 
-        <div className="container relative z-10 mx-auto px-4 text-center max-w-3xl">
-          <span className="inline-flex items-center rounded-full border border-sky-100 bg-sky-50 px-4 py-1 text-sm font-semibold text-sky-600 mb-5">
-            Contact Our Clinic
-          </span>
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6">
+              Book Your
+              <span className="text-sky-500"> Appointment</span>
+            </h1>
 
-          <h1 className="text-4xl md:text-6xl font-bold text-slate-900 leading-tight">
-            Book Your
-            <span className="text-sky-500"> Appointment</span>
-          </h1>
-
-          <p className="mt-5 text-lg leading-8 text-slate-600">
-            Reach out for consultation, physiotherapy, chiropractic care,
-            rehabilitation, and personalized treatment guidance.
-          </p>
+            <p className="text-white text-lg">
+              Reach out for consultation, physiotherapy, chiropractic care,
+              rehabilitation, and personalized treatment guidance.
+            </p>
+          </div>
         </div>
       </section>
+
+      
 
       {/* MAIN */}
       <section className="relative bg-white py-10 lg:py-10">

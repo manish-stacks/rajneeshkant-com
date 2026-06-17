@@ -50,33 +50,36 @@ export default function GalleryPage() {
           );
         }
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
   return (
     <main className="bg-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-100 via-white to-blue-100 pt-28 pb-20">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 h-72 w-72 rounded-full bg-blue-200 blur-3xl" />
-          <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-sky-200 blur-3xl" />
+      <section className="relative pt-32 pb-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/service-banner.jpg"
+            alt=" Clinic Gallery"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-[#0F172A]/80" />
         </div>
 
-        <div className="container relative mx-auto px-4 text-center">
-          <span className="inline-block rounded-full bg-blue-100 px-4 py-1 text-sm font-medium text-blue-700 mb-5">
-            Clinic Gallery
-          </span>
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6">
+              Modern Care,
+              <span className="text-blue-600"> Comfortable Environment</span>
+            </h1>
 
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-gray-900 mb-6">
-            Modern Care,
-            <span className="text-blue-600"> Comfortable Environment</span>
-          </h1>
-
-          <p className="mx-auto max-w-2xl text-base md:text-lg leading-relaxed text-gray-600">
-            Explore our advanced clinic facilities, patient-friendly treatment
-            spaces, and moments that reflect compassionate healthcare.
-          </p>
+            <p className="text-white text-lg">
+              Explore our advanced clinic facilities, patient-friendly treatment
+              spaces, and moments that reflect compassionate healthcare.
+            </p>
+          </div>
         </div>
       </section>
+
 
       {/* Gallery Section */}
       <section className="py-16 md:py-24">

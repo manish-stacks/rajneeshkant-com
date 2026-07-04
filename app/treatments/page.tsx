@@ -21,15 +21,16 @@ export default function TreatmentsPage() {
   );
 
   useEffect(() => {
-    api
-      .get("/treatments")
-      .then((res) => {
-        if (res.data.treatments && res.data.treatments.length > 0) {
-          setTreatments(res.data.treatments);
-        }
-      })
-      .catch(() => { });
-  }, []);
+  api
+    .get("/treatments", {
+      params: {
+        t: Date.now(),
+      },
+    })
+    .then((res) => {
+      setTreatments(res.data.treatments);
+    });
+}, []);
 
   return (
     <>

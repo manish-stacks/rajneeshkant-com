@@ -2,8 +2,11 @@ import { NextResponse } from "next/server";
 import { dbGetTreatments, dbCreateTreatment } from "@/lib/queries";
 import { slugify } from "@/lib/utils";
 import { isAdmin } from "@/lib/auth";
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export async function GET(request: Request) {
+   console.log("API HIT:", new Date().toLocaleTimeString());
   try {
     const { searchParams } = new URL(request.url);
     const all = searchParams.get("all");

@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { dbGetTreatmentById, dbUpdateTreatment, dbDeleteTreatment } from "@/lib/queries";
 import { isAdmin } from "@/lib/auth";
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 interface Props { params: Promise<{ id: string }>; }
 

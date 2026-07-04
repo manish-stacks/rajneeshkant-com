@@ -13,7 +13,13 @@ import { buildRobots, canonicalFor } from "@/lib/seo";
 // ISR: pages are cached and rebuilt at most once per `revalidate` window,
 // so repeat visits are served from a fast static cache instead of hitting the
 // DB on every request. Edits in admin appear within this window.
-export const revalidate = 300;
+// export const revalidate = 300;
+// export const dynamicParams = true;
+
+// Always fetch fresh from the DB — no ISR cache, so admin edits (treatments,
+// blogs, pages) show up immediately on the live site.
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 export const dynamicParams = true;
 
 // Pre-render all known treatment / blog / page slugs at build time.

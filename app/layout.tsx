@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 // stub
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
@@ -68,7 +69,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "YOUR_GOOGLE_VERIFICATION_CODE",
+    google: "Q89W1qS3lZPLE4W7j0p3HhpNPFAb4Xt7ZpIiMeFnwvE",
   },
 };
 
@@ -141,6 +142,18 @@ export default async function RootLayout({
             }),
           }}
         />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-75RL2K7F9E"
+          strategy="afterInteractive"
+        />
+        <Script id="ga-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-75RL2K7F9E');
+          `}
+        </Script>
       </head>
       <body>
         <CodeInjector code={settings.headerCode} position="header" />

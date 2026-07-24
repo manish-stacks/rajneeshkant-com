@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CheckCircle, ArrowRight, Phone } from "lucide-react";
+import { sanitizeContent } from "@/lib/sanitize-content";
 
 export function TreatmentView({
   treatment,
@@ -97,7 +98,7 @@ export function TreatmentView({
                       [&_table]:w-full
                     "
                     dangerouslySetInnerHTML={{
-                      __html: treatment.content,
+                      __html: sanitizeContent(treatment.content),
                     }}
                   />
                 </div>

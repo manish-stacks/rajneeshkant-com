@@ -23,8 +23,12 @@ export default function ImageUpload({
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState("");
   const [dragOver, setDragOver] = useState(false);
+  // Tracks the most recent upload attempt so a slower, earlier request
+  // can't resolve after a later one and overwrite it with the wrong image.
+  const requestIdRef = useRef(0);
 
   const upload = async (file: File) => {
+    const requestId = ++requestIdRef.current;
     setError("");
     setUploading(true);
     try {
@@ -33,11 +37,13 @@ export default function ImageUpload({
       const res = await api.post("/upload", fd, {
         headers: { "Content-Type": "multipart/form-data" },
       });
+      if (requestId !== requestIdRef.current) return; // stale response, ignore
       onChange(res.data.url);
     } catch (err) {
+      if (requestId !== requestIdRef.current) return;
       setError((err as Error).message || "Upload failed");
     } finally {
-      setUploading(false);
+      if (requestId === requestIdRef.current) setUploading(false);
     }
   };
 

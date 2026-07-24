@@ -25,5 +25,5 @@ export function buildRobots(robotsIndex: boolean): Metadata["robots"] {
 export function canonicalFor(slug: string, entityCanonical?: string) {
   return entityCanonical && entityCanonical.trim()
     ? entityCanonical
-    : `${SITE_URL}/${slug}/`;
+    : `${SITE_URL}/${slug}`;
 }

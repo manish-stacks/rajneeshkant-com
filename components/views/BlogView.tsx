@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Calendar, Tag, ArrowLeft, ArrowRight, User, Clock, Phone } from "lucide-react";
 import { AppointmentCTA } from "@/components/sections/AppointmentCTA";
+import { sanitizeContent } from "@/lib/sanitize-content";
 
 const FALLBACK_IMG = "/uploads/1781592961818-nprywd.jpg";
 
@@ -119,7 +120,7 @@ export function BlogView({ post, others }: { post: any; others: any[] }) {
               <div className="min-w-0 overflow-hidden">
                 <article
                   className="blog-prose break-words [&_*]:max-w-full [&_iframe]:max-w-full [&_video]:max-w-full"
-                  dangerouslySetInnerHTML={{ __html: post.content }}
+                  dangerouslySetInnerHTML={{ __html: sanitizeContent(post.content) }}
                 />
               </div>
 

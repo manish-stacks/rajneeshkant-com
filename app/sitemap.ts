@@ -26,7 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     treatmentPages = treatments
       .filter((t: any) => t.robotsIndex !== false)
       .map((t: any) => ({
-        url: `${BASE_URL}/${t.slug}/`,
+        url: `${BASE_URL}/${t.slug}`,
         lastModified: t.updatedAt ? new Date(t.updatedAt) : new Date(),
         changeFrequency: "monthly" as const,
         priority: 0.8,
@@ -39,7 +39,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     blogPages = blogs
       .filter((b: any) => b.robotsIndex !== false)
       .map((b: any) => ({
-        url: `${BASE_URL}/${b.slug}/`,
+        url: `${BASE_URL}/${b.slug}`,
         lastModified: new Date(b.updatedAt || b.publishedAt || Date.now()),
         changeFrequency: "monthly" as const,
         priority: 0.7,
@@ -51,7 +51,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     contentPages = pages
       .filter((p: any) => p.robotsIndex !== false)
       .map((p: any) => ({
-        url: `${BASE_URL}/${p.slug}/`,
+        url: `${BASE_URL}/${p.slug}`,
         lastModified: p.updatedAt ? new Date(p.updatedAt) : new Date(),
         changeFrequency: "monthly" as const,
         priority: 0.6,

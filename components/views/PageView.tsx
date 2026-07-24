@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
+import { sanitizeContent } from "@/lib/sanitize-content";
 
 export function PageView({ page }: { page: any }) {
   const hasContent = page.content && page.content.trim();

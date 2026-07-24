@@ -21,16 +21,11 @@ export const metadata: Metadata = {
   },
   description:
     "Dr. Rajneesh Kant is India's leading chiropractor & physiotherapist in Mumbai. Expert treatment for back pain, neck pain, sciatica, sports injuries & more. Book appointment today.",
-  keywords: [
-    "chiropractor India",
-    "physiotherapist Mumbai",
-    "back pain treatment Mumbai",
-    "neck pain treatment",
-    "sciatica treatment",
-    "Dr Rajneesh Kant",
-    "spine specialist Mumbai",
-    "chiropractic care India",
-  ],
+  // No global `keywords` here on purpose: Next.js metadata falls back to the
+  // parent layout's value for any page that doesn't set its own, which was
+  // causing every page (about, treatments, blogs, etc.) to output this same
+  // Home-page keyword list. Each page/entity should set `keywords` itself
+  // (see app/page.tsx, app/[slug]/page.tsx) or omit it.
   authors: [{ name: "Dr. Rajneesh Kant" }],
   creator: "Dr. Rajneesh Kant",
   openGraph: {
@@ -78,77 +73,10 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const settings = await getSiteSettings();
-  const sameAs = [
-    settings.facebook,
-    settings.instagram,
-    settings.youtube,
-  ].filter(Boolean);
 
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "MedicalBusiness",
-              name: settings.clinicName,
-              description:
-                "Leading chiropractic and physiotherapy clinic in Mumbai, India.",
-              url: "https://drrajneeshkant.com",
-              telephone: settings.phone,
-              email: settings.email,
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Mumbai",
-                addressRegion: "Maharashtra",
-                addressCountry: "IN",
-              },
-              geo: {
-                "@type": "GeoCoordinates",
-                latitude: 19.076,
-                longitude: 72.8777,
-              },
-              openingHoursSpecification: [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
-                  ],
-                  opens: "09:00",
-                  closes: "19:00",
-                },
-              ],
-              sameAs:
-                sameAs.length > 0
-                  ? sameAs
-                  : [
-                      "https://www.facebook.com/drrajneeshkant",
-                      "https://www.instagram.com/drrajneeshkant",
-                    ],
-              hasMap: "https://maps.google.com/?q=Mumbai",
-              medicalSpecialty: "Chiropractic",
-              founder: {
-                "@type": "Physician",
-                name: "Dr. Rajneesh Kant",
-                jobTitle: "Chiropractor & Physiotherapist",
-                knowsAbout: [
-                  "Chiropractic Care",
-                  "Physiotherapy",
-                  "Back Pain Treatment",
-                  "Neck Pain Treatment",
-                  "Sciatica Treatment",
-                ],
-              },
-            }),
-          }}
-        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-75RL2K7F9E"
           strategy="afterInteractive"

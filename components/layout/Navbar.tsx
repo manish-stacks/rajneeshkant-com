@@ -65,9 +65,9 @@ export function Navbar() {
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-100 transition"><Facebook size={18} /></a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-100 transition"><Instagram size={18} /></a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-100 transition"><Youtube size={18} /></a>
+            <a href="https://www.facebook.com/backtonaturespineclinicbydrrajneeshkant" target="_blank" rel="noopener noreferrer nofollow" className="hover:text-gray-100 transition"><Facebook size={18} /></a>
+            <a href="https://www.instagram.com/backtonaturespineclinic/" target="_blank" rel="noopener noreferrer nofollow" className="hover:text-gray-100 transition"><Instagram size={18} /></a>
+            <a href="https://www.youtube.com/@drrajneeshkant" target="_blank" rel="noopener noreferrer nofollow" className="hover:text-gray-100 transition"><Youtube size={18} /></a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-100 transition"><Linkedin size={18} /></a>
           </div>
         </div>

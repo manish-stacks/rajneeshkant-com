@@ -54,7 +54,7 @@ const fallbackPosts: PreviewPost[] = [
 ];
 
 export function BlogPreviewSection() {
-  const [posts, setPosts] = useState<PreviewPost[]>([]);
+  const [posts, setPosts] = useState<PreviewPost[]>(fallbackPosts);
 
   useEffect(() => {
     api

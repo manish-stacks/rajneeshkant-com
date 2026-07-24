@@ -57,9 +57,9 @@ export function Footer() {
             <div className="flex items-center gap-3">
 
               {[
-                { icon: Facebook, href: "#" },
-                { icon: Instagram, href: "#" },
-                { icon: Youtube, href: "#" },
+                { icon: Facebook, href: "https://www.facebook.com/backtonaturespineclinicbydrrajneeshkant" },
+                { icon: Instagram, href: "https://www.instagram.com/backtonaturespineclinic/" },
+                { icon: Youtube, href: "https://www.youtube.com/@drrajneeshkant" },
               ].map((item, index) => {
                 const Icon = item.icon;
 
@@ -67,6 +67,8 @@ export function Footer() {
                   <a
                     key={index}
                     href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
                     className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#11bfd0] flex items-center justify-center transition-all duration-300"
                   >
                     <Icon size={16} />
@@ -112,7 +114,7 @@ export function Footer() {
                 { label: "Home", href: "/" },
                 { label: "About Us", href: "/about" },
                 { label: "Treatments", href: "/treatments" },
-                { label: "Blogs", href: "/blog" },
+                { label: "Blogs", href: "/blogs" },
                 { label: "Gallery", href: "/gallery" },
                 { label: "Contact Us", href: "/contact" },
               ].map((item, index) => (

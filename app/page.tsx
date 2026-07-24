@@ -24,6 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
     keywords: settings.seoKeywords
       ? settings.seoKeywords.split(",").map((k: string) => k.trim())
       : undefined,
+    alternates: { canonical: "/" },
   };
 }
 

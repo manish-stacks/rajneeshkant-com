@@ -7,14 +7,14 @@ import LayoutSection from "@/components/LayoutSection";
 import CodeInjector from "@/components/CodeInjector";
 import { getSiteSettings } from "@/lib/content";
 
-const inter={variable:"--font-inter"};
+const inter = { variable: "--font-inter" };
 
-const poppins={variable:"--font-poppins"};
-
-
+const poppins = { variable: "--font-poppins" };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://drrajneeshkant.com"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://drrajneeshkant.com",
+  ),
   title: {
     default: "Dr. Rajneesh Kant | Top Chiropractor & Physiotherapist in India",
     template: "%s | Dr. Rajneesh Kant",
@@ -53,8 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Dr. Rajneesh Kant | Top Chiropractor in India",
-    description:
-      "Expert chiropractic & physiotherapy care in Mumbai.",
+    description: "Expert chiropractic & physiotherapy care in Mumbai.",
     images: ["/images/og-image.jpg"],
   },
   robots: {
@@ -79,8 +78,11 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const settings = await getSiteSettings();
-  const sameAs = [settings.facebook, settings.instagram, settings.youtube]
-    .filter(Boolean);
+  const sameAs = [
+    settings.facebook,
+    settings.instagram,
+    settings.youtube,
+  ].filter(Boolean);
 
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
@@ -112,7 +114,12 @@ export default async function RootLayout({
                 {
                   "@type": "OpeningHoursSpecification",
                   dayOfWeek: [
-                    "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
                   ],
                   opens: "09:00",
                   closes: "19:00",
@@ -157,9 +164,7 @@ export default async function RootLayout({
       </head>
       <body>
         <CodeInjector code={settings.headerCode} position="header" />
-        <LayoutSection>
-          {children}
-        </LayoutSection>
+        <LayoutSection>{children}</LayoutSection>
         <Toaster />
         <CodeInjector code={settings.footerCode} position="footer" />
       </body>

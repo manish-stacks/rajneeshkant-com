@@ -1,5 +1,4 @@
 "use client";
-import type { Metadata } from "next";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -39,11 +38,6 @@ const branches = [
   },
 ];
 
-// export const metadata: Metadata = {
-//   title: "Contact Dr. Rajneesh Kant",
-//   description:
-//     "Expert health articles by Dr. Rajneesh Kant. Read about back pain, chiropractic care, physiotherapy, sciatica, sports injuries and more.",
-// };
 export default function ContactPage() {
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"

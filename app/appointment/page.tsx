@@ -6,6 +6,19 @@ export const metadata: Metadata = {
   title: "Book an Appointment",
   description:
     "Book a consultation with Dr. Rajneesh Kant. Expert chiropractic and physiotherapy care in Mumbai. Fill the form or call +91-9308511357.",
+  alternates: { canonical: "/appointment" },
+  openGraph: {
+    title: "Book an Appointment | Dr. Rajneesh Kant",
+    description:
+      "Book a consultation with Dr. Rajneesh Kant. Expert chiropractic and physiotherapy care in Mumbai.",
+    url: "/appointment",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Book an Appointment | Dr. Rajneesh Kant",
+    description: "Book a consultation with Dr. Rajneesh Kant in Mumbai.",
+  },
 };
 
 export default function AppointmentPage() {

@@ -10,6 +10,20 @@ export const metadata: Metadata = {
   title: "About Dr. Rajneesh Kant | Leading Chiropractor in India",
   description:
     "Learn about Dr. Rajneesh Kant — India's leading chiropractor and physiotherapist with 15+ years of experience treating back pain, sciatica, sports injuries and more in Mumbai.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Dr. Rajneesh Kant | Leading Chiropractor in India",
+    description:
+      "Learn about Dr. Rajneesh Kant — India's leading chiropractor and physiotherapist with 15+ years of experience.",
+    url: "/about",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Dr. Rajneesh Kant | Leading Chiropractor in India",
+    description:
+      "Learn about Dr. Rajneesh Kant — India's leading chiropractor and physiotherapist.",
+  },
 };
 
 const qualifications = [

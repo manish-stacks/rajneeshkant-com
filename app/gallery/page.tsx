@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { Metadata } from "next";
 import Image from "next/image";
 import LightGallery from "lightgallery/react";
 
@@ -14,12 +13,6 @@ import "lightgallery/css/lg-thumbnail.css";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
 import api from "@/lib/axios";
-
-// export const metadata: Metadata = {
-//   title: "Gallery | Clinic Photos & Patient Stories",
-//   description:
-//     "View photos of Dr. Rajneesh Kant's clinic, treatment facilities and patient recovery stories.",
-// };
 
 interface GalleryItem {
   id: string;

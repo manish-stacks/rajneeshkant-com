@@ -11,5 +11,6 @@ export function sanitizeContent(html: string | null | undefined): string {
   if (!html) return "";
   return html
     .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, "")
-    .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, "");
+    .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, "")
+    .replace(/&nbsp;/gi, " ");
 }

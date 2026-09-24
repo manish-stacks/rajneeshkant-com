@@ -65,11 +65,12 @@ export default function RichTextEditor({
         const res = await api.post("/upload", fd, {
           headers: { "Content-Type": "multipart/form-data" },
         });
-        editor.deleteText(range.index, ph.length);
-        editor.insertEmbed(range.index, "image", res.data.url);
+        editor.deleteText(range.index, ph.length, "silent");
+        // source "user" → onChange fires → parent state (form.content) updates
+        editor.insertEmbed(range.index, "image", res.data.url, "user");
         editor.setSelection(range.index + 1, 0);
       } catch (err) {
-        editor.deleteText(range.index, ph.length);
+        editor.deleteText(range.index, ph.length, "silent");
         alert((err as Error).message || "Image upload failed");
       }
     };

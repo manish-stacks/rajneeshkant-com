@@ -55,9 +55,9 @@ export function PageView({ page }: { page: any }) {
             <h1 className="font-heading text-3xl font-bold leading-tight md:text-5xl break-words">
               {page.title}
             </h1>
-            {updated && (
+            {/* {updated && (
               <p className="mt-4 text-sm text-blue-100/80">Last updated: {updated}</p>
-            )}
+            )} */}
           </div>
         </div>
       </section>

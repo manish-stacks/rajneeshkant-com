@@ -51,9 +51,9 @@ export function TreatmentView({
               {treatment.name}
             </h1>
 
-            <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
+            {/* <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
               {treatment.shortDesc}
-            </p>
+            </p> */}
           </div>
         </div>
       </section>
@@ -80,23 +80,22 @@ export function TreatmentView({
                 <div className="min-w-0 overflow-hidden">
                   <article
                     className="
-                      prose prose-lg prose-blue max-w-none
-                      prose-headings:text-gray-900
-                      prose-p:text-gray-700
-                      prose-li:text-gray-700
-                      prose-img:max-w-full
-                      prose-img:h-auto
-                      prose-img:rounded-2xl
-                      prose-pre:overflow-x-auto
-                      break-words
-                      [&_*]:max-w-full
-                      [&_img]:h-auto
-                      [&_iframe]:max-w-full
-                      [&_video]:max-w-full
-                      [&_table]:block
-                      [&_table]:overflow-x-auto
-                      [&_table]:w-full
-                    "
+  max-w-none break-words
+  [&_h1]:font-heading [&_h1]:text-4xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mt-10 [&_h1]:mb-5
+  [&_h2]:font-heading [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-10 [&_h2]:mb-4
+  [&_h3]:font-heading [&_h3]:text-2xl [&_h3]:font-semibold [&_h3]:text-gray-900 [&_h3]:mt-8 [&_h3]:mb-3
+  [&_h4]:text-xl [&_h4]:font-semibold [&_h4]:text-gray-900 [&_h4]:mt-6 [&_h4]:mb-2
+  [&_p]:text-lg [&_p]:text-gray-700 [&_p]:leading-relaxed [&_p]:mb-5
+  [&_a]:text-brand-blue [&_a]:underline
+  [&_strong]:font-semibold [&_strong]:text-gray-900
+  [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-5 [&_ul]:space-y-2
+  [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-5 [&_ol]:space-y-2
+  [&_li]:text-gray-700
+  [&_img]:max-w-full [&_img]:h-auto [&_img]:rounded-2xl
+  [&_iframe]:max-w-full [&_video]:max-w-full
+  [&_pre]:overflow-x-auto
+  [&_table]:block [&_table]:overflow-x-auto [&_table]:w-full
+"
                     dangerouslySetInnerHTML={{
                       __html: sanitizeContent(treatment.content),
                     }}
@@ -152,9 +151,8 @@ export function TreatmentView({
                     </h3>
 
                     <p className="text-blue-100 text-sm leading-relaxed mb-6">
-                      Get expert treatment for{" "}
-                      <strong>{treatment.name}</strong>. Schedule your
-                      appointment today.
+                      Get expert treatment for <strong>{treatment.name}</strong>
+                      . Schedule your appointment today.
                     </p>
 
                     <Link
